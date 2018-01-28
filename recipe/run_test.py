@@ -33,3 +33,4 @@ import material.frontend.templatetags
 import material.frontend.views
 import material.admin
 import material.admin.templatetags
+import material.admin.templatetags
