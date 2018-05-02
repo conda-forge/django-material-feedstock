@@ -18,12 +18,15 @@ not in code. Layouts allow setting relative location and size of fields.
 Current build status
 ====================
 
-All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/django-material-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/django-material-feedstock)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/django-material-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/django-material-feedstock)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/django-material/badges/version.svg)](https://anaconda.org/conda-forge/django-material)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/django-material/badges/downloads.svg)](https://anaconda.org/conda-forge/django-material)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-django--material-green.svg)](https://anaconda.org/conda-forge/django-material) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/django-material.svg)](https://anaconda.org/conda-forge/django-material) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/django-material.svg)](https://anaconda.org/conda-forge/django-material) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/django-material.svg)](https://anaconda.org/conda-forge/django-material) |
 
 Installing django-material
 ==========================
