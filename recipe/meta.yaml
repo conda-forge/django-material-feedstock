@@ -1,25 +1,24 @@
 {% set name = "django-material" %}
-{% set version = "1.2.3" %}
-{% set sha256 = "08b6dda303221f92f12079302deaf74f4aa935dce856f04c14f0fab4ce717508" %}
+{% set version = "1.2.5" %}
+{% set sha256 = "e9502ffe738cf513c57beb0e15a97fcb0b35e49ca656ed7e68543247605416fb" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   number: 0
   noarch: python
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - django >=1.8
