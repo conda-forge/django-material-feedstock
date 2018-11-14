@@ -1,6 +1,6 @@
 {% set name = "django-material" %}
-{% set version = "1.3.0" %}
-{% set sha256 = "79ab15f73b648d29f7f2a72e34ca5870251690a280dad72d05cdd70d937da2b2" %}
+{% set version = "1.4.0" %}
+{% set sha256 = "1ff48a6f80770b633370c06b6304a825f2bc689aa7e52af6f40a53bf2d15f64b" %}
 
 package:
   name: {{ name|lower }}
