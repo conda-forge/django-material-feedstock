@@ -1,14 +1,13 @@
 {% set name = "django-material" %}
-{% set version = "1.5.8" %}
-{% set sha256 = "27cff9f61796e5727475fdcef76f09dae32b7a91f036abf65b42c99057a497d3" %}
+{% set version = "1.11.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-material-{{ version }}.tar.gz
+  sha256: 022155be14e168a67392058a7fb11382b466973e2b5942d23220d5d0886b134a
 
 build:
   number: 0
@@ -17,15 +16,24 @@ build:
 
 requirements:
   build:
-    - python
+    - python >=3.7,<3.11
     - pip
   run:
-    - python
-    - django >=1.8
+    - python >=3.7,<3.11
+    - django >=2.2
+    - six
+
+test:
+  imports:
+    - material
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: http://forms.viewflow.io/
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   
   # License not in current tarball. Including manually for now.
   # https://github.com/conda-forge/staged-recipes/pull/3159#pullrequestreview-45483471
