@@ -30,6 +30,8 @@ test:
     - pip check
   requires:
     - pip
+    - django
+    - six
 
 about:
   home: http://forms.viewflow.io/
@@ -50,4 +52,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - rxm7706
     - cshaley
