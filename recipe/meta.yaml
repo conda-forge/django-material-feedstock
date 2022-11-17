@@ -1,6 +1,6 @@
 {% set name = "django-material" %}
-{% set version = "1.5.8" %}
-{% set sha256 = "27cff9f61796e5727475fdcef76f09dae32b7a91f036abf65b42c99057a497d3" %}
+{% set version = "1.7.1" %}
+{% set sha256 = "77cfcc83da7724066b5b78bbb72cd4fbe752b38ffb20cb6ca36feb9657d9f19f" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   build:
@@ -26,12 +26,11 @@ requirements:
 about:
   home: http://forms.viewflow.io/
   license: BSD 3-Clause
-  
+
   # License not in current tarball. Including manually for now.
   # https://github.com/conda-forge/staged-recipes/pull/3159#pullrequestreview-45483471
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  
-  summary: 'Material Design for django forms and admin'
+  license_file: {{ environ["RECIPE_DIR"] }}/LICENSE
+  summary: Material Design for django forms and admin
   description: |
     Django-Material offers an alternative approach to rendering forms in django.
     Strong Python/HTML code separation keeps your code DRY and free from underlying
