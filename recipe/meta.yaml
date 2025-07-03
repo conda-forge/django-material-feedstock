@@ -1,25 +1,26 @@
 {% set name = "django-material" %}
-{% set version = "1.11.3" %}
+{% set version = "1.12.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/django-material-{{ version }}.tar.gz
-  sha256: 022155be14e168a67392058a7fb11382b466973e2b5942d23220d5d0886b134a
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-material-{{ version }}.tar.gz
+  sha256: 5e3b9b6c67bd7013d08c879d1a18729015d826109d498c8079cb220e3d96de8e
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
-  build:
-    - python >=3.7,<3.11
+  host:
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python >=3.7,<3.11
+    - python >={{ python_min }},<4.0
     - django >=2.2
     - six
 
@@ -30,6 +31,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
     - django
     - six
 
