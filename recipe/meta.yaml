@@ -1,37 +1,47 @@
 {% set name = "django-material" %}
-{% set version = "1.5.8" %}
-{% set sha256 = "27cff9f61796e5727475fdcef76f09dae32b7a91f036abf65b42c99057a497d3" %}
+{% set version = "1.12.0" %}
+{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-material-{{ version }}.tar.gz
+  sha256: 5e3b9b6c67bd7013d08c879d1a18729015d826109d498c8079cb220e3d96de8e
 
 build:
   number: 0
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
 
 requirements:
-  build:
-    - python
+  host:
+    - python {{ python_min }}
     - pip
+    - setuptools
   run:
-    - python
-    - django >=1.8
+    - python >={{ python_min }},<3.10
+    - django >=4.2,<5.0
+    - six
+
+test:
+  imports:
+    - material
+  commands:
+    - pip check
+  requires:
+    - pip
+    - python {{ python_min }}
+    - django >=4.2,<5.0
+    - six
 
 about:
-  home: http://forms.viewflow.io/
-  license: BSD 3-Clause
-  
-  # License not in current tarball. Including manually for now.
-  # https://github.com/conda-forge/staged-recipes/pull/3159#pullrequestreview-45483471
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
-  
-  summary: 'Material Design for django forms and admin'
+  home: http://github.com/viewflow/django-material
+  summary: Material design for django forms and admin
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
   description: |
     Django-Material offers an alternative approach to rendering forms in django.
     Strong Python/HTML code separation keeps your code DRY and free from underlying
@@ -42,4 +52,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - rxm7706
     - cshaley
