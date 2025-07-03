@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/django-material-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/django-material-{{ version }}.tar.gz
   sha256: 5e3b9b6c67bd7013d08c879d1a18729015d826109d498c8079cb220e3d96de8e
 
 build:
