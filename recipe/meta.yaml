@@ -18,7 +18,7 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }},<3.10
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
@@ -33,7 +33,7 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }},<3.10
+    - python {{ python_min }}
     - django >=4.2,<5.0
     - six
 
