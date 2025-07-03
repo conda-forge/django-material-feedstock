@@ -17,6 +17,10 @@ build:
 
 
 requirements:
+  build:
+    - python {{ python_min }}
+    - pip
+    - setuptools
   host:
     - python {{ python_min }}
     - pip
