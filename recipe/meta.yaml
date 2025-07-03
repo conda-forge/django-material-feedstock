@@ -33,7 +33,7 @@ test:
     - pip check
   requires:
     - pip
-    - python {{ python_min }}
+    - python >={{ python_min }},<3.10
     - django >=4.2,<5.0
     - six
 
