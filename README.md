@@ -3,11 +3,11 @@ About django-material-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/django-material-feedstock/blob/main/LICENSE.txt)
 
-Home: http://forms.viewflow.io/
+Home: http://github.com/viewflow/django-material
 
 Package license: BSD-3-Clause
 
-Summary: Material Design for django forms and admin
+Summary: Material design for django forms and admin
 
 Development: https://github.com/viewflow/django-material
 
